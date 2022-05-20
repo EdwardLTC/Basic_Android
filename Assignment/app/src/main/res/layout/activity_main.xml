@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/im2"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
+    <TextView
+        android:layout_marginTop="130dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Main Activity"
+        android:textAlignment="center"
+        android:textColor="#e809e1"
+        android:textSize="25sp"
+        tools:ignore="HardcodedText,Suspicious0dp"
+        android:layout_marginBottom="2dp"/>
+
+    <Button
+        app:backgroundTint="@null"
+        android:layout_marginTop="10dp"
+        android:id="@+id/addClassBtn"
+        android:background="@drawable/btnradius"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="@string/add_class"
+        />
+
+    <Button
+        app:backgroundTint="@null"
+        android:layout_marginTop="50dp"
+        android:id="@+id/showAllClasses"
+        android:background="@drawable/btnradius"
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="@string/show_all_classes"
+        />
+
+    <Button
+        app:backgroundTint="@null"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btnradius"
+        android:layout_gravity="center"
+        android:id="@+id/studentManagementSystem"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="@string/student_management"
+        />
+
+
+</LinearLayout>

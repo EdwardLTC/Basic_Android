@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/im4"
+    tools:context=".Student_Management">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+
+        android:text="Student Management"
+        android:textAlignment="center"
+        android:textColor="#e809e1"
+        android:textSize="25sp"
+        tools:ignore="HardcodedText,Suspicious0dp"
+        android:layout_marginBottom="2dp"/>
+
+    <LinearLayout
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        tools:ignore="ExtraText">
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:background="#66cccc"
+            android:text="Class"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            tools:ignore="HardcodedText,Suspicious0dp" />
+
+        <Spinner
+            android:id="@+id/sp_subject"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="#738086"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="2dp"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        tools:ignore="ExtraText">
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:background="#66cccc"
+            android:text="Full Name"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            tools:ignore="HardcodedText,Suspicious0dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:textColor="#79d246"
+            android:textSize="25sp"
+            android:hint="Full name"
+            android:textAlignment="center"
+            tools:ignore="HardcodedText,Suspicious0dp,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="2dp"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        tools:ignore="ExtraText">
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:background="#66cccc"
+            android:text="DOB"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            tools:ignore="HardcodedText,Suspicious0dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:textColor="#79d246"
+            android:textSize="25sp"
+            android:textAlignment="center"
+            android:hint="dd/mm/yyyy "
+            tools:ignore="HardcodedText,Suspicious0dp,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+            <Button
+                app:backgroundTint="@null"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/addBtn"
+                android:layout_width="180dp"
+                android:layout_height="60dp"
+                android:text="@string/add_student"
+                android:background="@drawable/btnradius"
+                />
+            <Button
+                app:backgroundTint="@null"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/updateBtn"
+                android:layout_width="180dp"
+                android:layout_height="60dp"
+                android:text="@string/update_student"
+                android:background="@drawable/btnradius"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            app:backgroundTint="@null"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/remveBtn"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:text="@string/remove_student"
+            android:background="@drawable/btnradius"
+            />
+        <Button
+            app:backgroundTint="@null"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/someThings"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:text="someThings :>"
+            android:background="@drawable/btnradius"
+            />
+    </LinearLayout>
+
+    <ListView
+        android:layout_gravity="center"
+        android:layout_width="350dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/studentListView"
+        android:background="@drawable/listviewradius"
+        android:layout_height="wrap_content" />
+</LinearLayout>

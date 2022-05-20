@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Classes_System"
+    android:background="@drawable/im3"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Classes System"
+        android:textAlignment="center"
+        android:textColor="#e809e1"
+        android:textSize="25sp"
+        tools:ignore="HardcodedText,Suspicious0dp"
+        android:layout_marginBottom="2dp"/>
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:id="@+id/LLO1"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_gravity="center"
+        android:id="@+id/classesListView"
+        android:layout_width="350dp"
+        android:background="@drawable/listviewradius"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

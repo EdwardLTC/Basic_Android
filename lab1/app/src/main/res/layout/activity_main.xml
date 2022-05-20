@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@color/white"
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/var1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10">
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/var2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:ems="10"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <Button
+        android:id="@+id/btn_Plus"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:ems="10"
+        android:onClick="onClick"
+        android:text="Plus"
+        tools:ignore="HardcodedText,UsingOnClickInXml" />
+    <Button
+        android:id="@+id/btn_Minus"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:ems="10"
+        android:onClick="onClick"
+        android:text="Minus"
+        tools:ignore="HardcodedText,UsingOnClickInXml" />
+    <Button
+        android:id="@+id/btn_Multi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:ems="10"
+        android:onClick="onClick"
+        android:text="Multiplication"
+        tools:ignore="HardcodedText,UsingOnClickInXml" />
+    <Button
+        android:id="@+id/btn_Division"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:ems="10"
+        android:onClick="onClick"
+        android:text="Division"
+        tools:ignore="HardcodedText,UsingOnClickInXml" />
+
+</LinearLayout>
