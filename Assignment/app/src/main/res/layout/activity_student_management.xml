@@ -96,7 +96,8 @@
             android:textSize="25sp"
             android:textAlignment="center"
             android:hint="dd/mm/yyyy "
-            tools:ignore="HardcodedText,Suspicious0dp,SpeakableTextPresentCheck" />
+            tools:ignore="HardcodedText,Suspicious0dp,SpeakableTextPresentCheck"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -105,7 +106,7 @@
         android:layout_height="wrap_content">
             <Button
                 app:backgroundTint="@null"
-                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
                 android:id="@+id/addBtn"
                 android:layout_width="180dp"
                 android:layout_height="60dp"
@@ -114,7 +115,7 @@
                 />
             <Button
                 app:backgroundTint="@null"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:id="@+id/updateBtn"
                 android:layout_width="180dp"
                 android:layout_height="60dp"
@@ -128,7 +129,7 @@
         android:layout_height="wrap_content">
         <Button
             app:backgroundTint="@null"
-            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
             android:id="@+id/remveBtn"
             android:layout_width="180dp"
             android:layout_height="60dp"
@@ -137,7 +138,7 @@
             />
         <Button
             app:backgroundTint="@null"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:id="@+id/someThings"
             android:layout_width="180dp"
             android:layout_height="60dp"

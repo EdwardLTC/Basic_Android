@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Onscreen">
+
+    <Button
+        android:id="@+id/quadraticEquation"
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="204dp"
+        android:layout_marginEnd="156dp"
+        android:background="@drawable/buttonradius"
+        android:text="ptb2" />
+
+    <Button
+        android:id="@+id/listView"
+        android:background="@drawable/buttonradius"
+        android:layout_width="150dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="204dp"
+        android:layout_marginEnd="156dp"
+        android:text="list View" />
+
+
+</LinearLayout>
