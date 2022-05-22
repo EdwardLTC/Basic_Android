@@ -17,10 +17,11 @@ public class StudentDAO {
     }
 
     public void  initTempData(){
-        listStudents.add(new students("Le Thanh Cong","06/06/2003"));
-        listStudents.add(new students("Le Thanh Cong","06/06/2003"));
-        listStudents.add(new students("Le Thanh Cong","06/06/2003"));
-        listStudents.add(new students("Le Thanh Cong","06/06/2003"));
+        listStudents.add(new students("Le Thanh Cong","06/06/2003","Cp08"));
+        listStudents.add(new students("Le Thanh Cong","06/06/2003","Cp08"));
+        listStudents.add(new students("Le Thanh Cong","06/06/2003","Cp08"));
+        listStudents.add(new students("Le Thanh Cong","06/06/2003","Cp08"));
 
     }
+
 }

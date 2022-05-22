@@ -3,12 +3,14 @@ package com.edward.assignment.model;
 import java.util.Date;
 
 public class students {
-    private  String fullName;
+    private String fullName;
     private String Dob;
+    private String classes;
 
-    public students( String fullName, String dob) {
+    public students(String fullName, String dob, String classes) {
         this.fullName = fullName;
         this.Dob = dob;
+        this.classes = classes;
     }
 
     public String getFullName() {
@@ -27,8 +29,13 @@ public class students {
         Dob = dob;
     }
 
+    public String getClasses() {return classes;}
+
+    public void setClasses(String classes) {this.classes = classes;}
+
     @Override
     public String toString() {
-        return getFullName()+ "  :  " + getDob();
+        return getFullName() + "  :  " + getDob() + "  :  " + getClasses();
     }
+
 }

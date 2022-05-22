@@ -62,6 +62,7 @@
             tools:ignore="HardcodedText,Suspicious0dp" />
 
         <EditText
+            android:id="@+id/FNedt"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/white"
@@ -89,6 +90,7 @@
             tools:ignore="HardcodedText,Suspicious0dp" />
 
         <EditText
+            android:id="@+id/DOBedt"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/white"
