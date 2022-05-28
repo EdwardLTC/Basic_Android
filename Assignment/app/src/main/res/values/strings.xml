@@ -20,4 +20,5 @@
     <string name="remember_me">Remember Me</string>
     <string name="update_student">update Student</string>
     <string name="remove_student">Remove Student</string>
+    <string name="do_you_want_to_remove_this_student">Do you want to remove this student</string>
 </resources>

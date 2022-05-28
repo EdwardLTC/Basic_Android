@@ -1,5 +1,6 @@
 package com.edward.lab3;
 
+/*@author: Edward :>*/
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;

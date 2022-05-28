@@ -12,15 +12,24 @@ public class StudentDAO {
         listStudents.add(student);
     }
 
+    public  boolean removeObj(String obj){
+        for (int i = 0; i < listStudents.size(); i++) {
+            if (obj.equals(listStudents.get(i).getFullName())){
+                listStudents.remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
     public List<students> getList(){
         return listStudents;
     }
 
     public void  initTempData(){
-        listStudents.add(new students("Le Thanh Cong","06/06/2003","Cp08"));
-        listStudents.add(new students("Le Thanh Cong","06/06/2003","Cp08"));
-        listStudents.add(new students("Le Thanh Cong","06/06/2003","Cp08"));
-        listStudents.add(new students("Le Thanh Cong","06/06/2003","Cp08"));
+        listStudents.add(new students("Le Thanh Mai","06/06/2003","Cp08"));
+        listStudents.add(new students("Le Thanh Dung","06/06/2003","Cp08"));
+        listStudents.add(new students("Le Thanh Y","06/06/2003","Cp08"));
+        listStudents.add(new students("Le Thanh Vy","06/06/2003","Cp08"));
 
     }
 
