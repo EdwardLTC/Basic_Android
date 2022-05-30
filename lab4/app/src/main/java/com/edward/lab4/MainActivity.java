@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         Button click = findViewById(R.id.clickMe);
 
 
-
         click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
