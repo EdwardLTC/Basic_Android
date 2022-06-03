@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Basic Android/Basic_Android/lab4/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1625" />
+        <entry key="..\:/Basic Android/Basic_Android/lab4/app/src/main/res/layout/activity_call_action.xml" value="0.20878623188405798" />
         <entry key="..\:/Basic Android/Basic_Android/lab4/app/src/main/res/layout/activity_lcm.xml" value="0.19746376811594202" />
         <entry key="..\:/Basic Android/Basic_Android/lab4/app/src/main/res/layout/activity_list_view.xml" value="0.20878623188405798" />
         <entry key="..\:/Basic Android/Basic_Android/lab4/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Basic Android/Basic_Android/lab4/app/src/main/res/layout/activity_map.xml" value="0.20878623188405798" />
         <entry key="..\:/Basic Android/Basic_Android/lab4/app/src/main/res/layout/item_lv.xml" value="0.20878623188405798" />
       </map>
     </option>

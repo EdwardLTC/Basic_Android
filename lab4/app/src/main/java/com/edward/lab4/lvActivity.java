@@ -20,10 +20,10 @@ public class lvActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.lv);
         ArrayList<Staff> staffList = new ArrayList<>();
-        staffList.add(new Staff("TC","SG",R.drawable.ic_launcher_foreground));
-        staffList.add(new Staff("TD","SG",R.drawable.ic_launcher_foreground));
-        staffList.add(new Staff("TE","SG",R.drawable.ic_launcher_foreground));
-        staffList.add(new Staff("TV","SG",R.drawable.ic_launcher_foreground));
+        staffList.add(new Staff("TC","SG",R.drawable.ic_launcher_foreground,0));
+        staffList.add(new Staff("TD","SG",R.drawable.ic_launcher_foreground,1));
+        staffList.add(new Staff("TE","SG",R.drawable.ic_launcher_foreground,0));
+        staffList.add(new Staff("TV","SG",R.drawable.ic_launcher_foreground,1));
 
         AdapterListView adapter = new AdapterListView(staffList, lvActivity.this);
 
