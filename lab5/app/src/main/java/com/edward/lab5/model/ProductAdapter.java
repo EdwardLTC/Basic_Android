@@ -52,8 +52,8 @@ public class ProductAdapter extends BaseAdapter {
         txtTenSP.setText(alSanPham.get(i).getTenSP());
         txtGiaSP.setText(String.valueOf(alSanPham.get(i).getGiaSP()));
 
-        //set hình ảnh
-
+        int idIMG = context.getResources().getIdentifier(alSanPham.get(i).getHinHSP(),"drawable",context.getPackageName());
+        ivHinhSP.setImageResource(idIMG);
         return view;
     }
 }

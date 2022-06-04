@@ -66,4 +66,15 @@ public class ProductDAO extends LiteSQL {
         }
     }
 
+    public boolean deleteProduct(int id){
+        try {
+            SQLiteDatabase sqLiteDatabase =  liteSQL.getWritableDatabase();
+            sqLiteDatabase.delete("SANPHAM","id = ?", new String[]{String.valueOf(id)});
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
+    }
+
 }

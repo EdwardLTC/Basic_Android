@@ -1,8 +1,11 @@
 package com.edward.lab5;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -70,6 +73,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        lvSanPham.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Product product = (Product) adapterView.getAdapter().getItem(i);
+                int id = product.getId();
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("Arlert");
+                builder.setMessage("Are you sure to delete this product :>");
+                builder.setPositiveButton("Okla", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if (productDAO.deleteProduct(id)){
+                            Toast.makeText(MainActivity.this,"Remove success",Toast.LENGTH_SHORT).show();
+                            updateListview();
+                        }else {
+                            Toast.makeText(MainActivity.this,"Remove false",Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+
+                builder.create();
+                builder.show();
+                return false;
+            }
+        });
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
