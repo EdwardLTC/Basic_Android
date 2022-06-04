@@ -1,9 +1,11 @@
 package com.edward.lab5.DAO;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,6 +34,36 @@ public class ProductDAO extends LiteSQL {
             }while (cursor.moveToNext());
         }
         return list;
+    }
+
+    public  boolean insertProduct(Product product){
+        try {
+            SQLiteDatabase sqLiteDatabase = liteSQL.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+
+            contentValues.put("tensp", product.getTenSP());
+            contentValues.put("giasp", product.getGiaSP());
+            contentValues.put("hinhsp", product.getHinHSP());
+            sqLiteDatabase.insert("SANPHAM", null, contentValues);
+        }catch (Exception e){
+            Log.d(e.toString(), "insertProduct: ");
+            return false;
+        }
+        return true;
+    }
+
+    public  boolean updateProduct(Product product){
+        try{
+            SQLiteDatabase sqLiteDatabase =  liteSQL.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("tensp",product.getTenSP());
+            contentValues.put("giasp", product.getGiaSP());
+            contentValues.put("hinhsp", product.getHinHSP());
+            sqLiteDatabase.update("SANPHAM", contentValues,"id = ?",new String[]{String.valueOf(product.getId())});
+            return true;
+        }catch (Exception e){
+            return false;
+        }
     }
 
 }

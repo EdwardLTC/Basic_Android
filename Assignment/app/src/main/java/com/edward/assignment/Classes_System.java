@@ -4,11 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.edward.assignment.custom.LvClassCustom;
 import com.edward.assignment.model.Classes;
 import com.edward.assignment.model.ClassesDAO;
+
+import java.util.ArrayList;
 
 public class Classes_System extends AppCompatActivity {
     ListView lv ;
@@ -19,20 +24,16 @@ public class Classes_System extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_classes_system);
         lv = findViewById(R.id.classesListView);
-        ArrayAdapter<Classes> adapter = new ArrayAdapter<Classes>(this, android.R.layout.simple_list_item_1,android.R.id.text1,CD.getList());
+
+        LvClassCustom adapter = new LvClassCustom((ArrayList<Classes>) CD.getList(),this);
 
         lv.setAdapter(adapter);
 
-//        List<Classes> ls = new ArrayList<>();
-//        ls = CD.getList();
-//        for (int i = 0; i < ls.size(); i++) {
-//            EditText editText = new EditText(getApplicationContext());
-//            editText.setBackgroundResource(R.drawable.edittextradius);
-//            editText.setTop(5);
-//            editText.setText((i+1) +"  " +ls.get(i).getClassID()+"   "+ls.get(i).getClassName());
-//            LinearLayout linear=(LinearLayout)findViewById(R.id.LLO1);
-//            linear.addView(editText);
-//        }
-
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                
+            }
+        });
     }
 }

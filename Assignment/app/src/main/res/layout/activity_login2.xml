@@ -39,7 +39,7 @@
             android:layout_marginTop="10dp"
             android:textAlignment="center"
             android:hint="@string/username"
-            android:background="@drawable/edittextradius"
+            android:background="@drawable/edittextradiusleft"
             />
         <EditText
             android:id="@+id/password"
@@ -50,7 +50,7 @@
             android:inputType="textPassword"
             android:hint="@string/password"
             android:textAlignment="center"
-            android:background="@drawable/edittextradius"
+            android:background="@drawable/edittextradiusleft"
             />
         <CheckBox
             android:layout_width="wrap_content"

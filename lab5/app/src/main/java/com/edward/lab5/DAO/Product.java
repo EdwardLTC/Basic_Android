@@ -17,6 +17,11 @@ public class Product {
         this.hinHSP = hinHSP;
     }
 
+    public Product( String tenSP, int giaSP, String hinHSP) {
+        this.tenSP = tenSP;
+        this.giaSP = giaSP;
+        this.hinHSP = hinHSP;
+    }
     public int getId() {
         return id;
     }
