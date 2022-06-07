@@ -4,14 +4,14 @@ import android.content.Context;
 
 import java.util.Date;
 
-public class students {
+public class Students {
     private String fullName;
-    private String Dob;
+    private String Id;
     private String classes;
 
-    public students(String fullName, String dob, String classes) {
+    public Students(String fullName, String id, String classes) {
         this.fullName = fullName;
-        this.Dob = dob;
+        this.Id = id;
         this.classes = classes;
     }
 
@@ -23,12 +23,12 @@ public class students {
         this.fullName = fullName;
     }
 
-    public String getDob() {
-        return Dob;
+    public String getId() {
+        return Id;
     }
 
-    public void setDob(String dob) {
-        Dob = dob;
+    public void setDob(String id) {
+        Id = id;
     }
 
     public String getClasses() {return classes;}
@@ -37,7 +37,7 @@ public class students {
 
     @Override
     public String toString() {
-        return getFullName() + "  :  " + getDob() + "  :  " + getClasses();
+        return getFullName() + "  :  " + getId() + "  :  " + getClasses();
     }
 
 }

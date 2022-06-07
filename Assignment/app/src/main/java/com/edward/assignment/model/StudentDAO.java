@@ -1,36 +1,74 @@
 package com.edward.assignment.model;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+
+import com.edward.assignment.Helper.MyStudentSQLite;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class StudentDAO {
-    List<students> listStudents = new ArrayList<>();
-    public  StudentDAO(){
-        initTempData();
-    }
-    public  void  addStudent (students student){
-        listStudents.add(student);
+    private static MyStudentSQLite myStudentSQLite;
+
+    public StudentDAO(Context context){
+        myStudentSQLite = new MyStudentSQLite(context);
     }
 
-    public  boolean removeObj(String obj){
-        for (int i = 0; i < listStudents.size(); i++) {
-            if (obj.equals(listStudents.get(i).getFullName())){
-                listStudents.remove(i);
-                return true;
-            }
+    public ArrayList<Students> getList(){
+        ArrayList<Students> list = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = myStudentSQLite.getReadableDatabase();
+
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM StudentDB",null);
+        if (cursor.getCount()!=0){
+            cursor.moveToFirst();
+            do{
+                list.add(new Students(cursor.getString(1),cursor.getString(0),cursor.getString(2)));
+            }while (cursor.moveToNext());
         }
-        return false;
-    }
-    public List<students> getList(){
-        return listStudents;
+        return list;
     }
 
-    public void  initTempData(){
-        listStudents.add(new students("Le Thanh Mai","06/06/2003","Cp08"));
-        listStudents.add(new students("Le Thanh Dung","06/06/2003","Cp08"));
-        listStudents.add(new students("Le Thanh Y","06/06/2003","Cp08"));
-        listStudents.add(new students("Le Thanh Vy","06/06/2003","Cp08"));
+    public  boolean insertStudent(Students student){
+        try {
+            SQLiteDatabase sqLiteDatabase = myStudentSQLite.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("id", student.getId());
+            contentValues.put("name", student.getFullName());
+            contentValues.put("class", student.getClasses());
+            sqLiteDatabase.insert("StudentDB", null, contentValues);
+            return true;
+        }catch (Exception e){
+            Log.d(e.toString(), "insertProduct: ");
+            return false;
+        }
 
+    }
+
+    public  boolean updateStudent(Students students){
+        try{
+            SQLiteDatabase sqLiteDatabase =  myStudentSQLite.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("name", students.getFullName());
+            contentValues.put("class", students.getClasses());
+            sqLiteDatabase.update("StudentDB", contentValues,"id = ?",new String[]{String.valueOf(students.getId())});
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    public boolean deleteStudent(String id){
+        try {
+            SQLiteDatabase sqLiteDatabase =  myStudentSQLite.getWritableDatabase();
+            sqLiteDatabase.delete("StudentDB","id = ?", new String[]{String.valueOf(id)});
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
     }
 
 }

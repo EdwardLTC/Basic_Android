@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/dialogshape"
+    android:layout_height="300dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Add new class"
+        android:textAlignment="center"
+        android:textColor="#e809e1"
+        android:textSize="25sp"
+        />
+    <EditText
+        android:id="@+id/classId"
+        android:layout_gravity="center"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:hint="Class ID"
+        android:background="@drawable/edittextradius" />
+   <EditText
+        android:id="@+id/className"
+        android:layout_gravity="center"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:hint="Class Name"
+        android:textAlignment="center"
+        android:background="@drawable/edittextradius" />
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginTop="50dp"
+       android:layout_gravity="center">
+    <Button
+        app:backgroundTint="@null"
+        android:id="@+id/Add"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/btnradius"
+        android:text="add"
+        android:textColor="#e809e1" />
+
+    <Button
+        app:backgroundTint="@null"
+        android:id="@+id/Exit"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/btnradius"
+        android:text="Exit"
+        android:textColor="#e809e1" />
+   </LinearLayout>
+</LinearLayout>

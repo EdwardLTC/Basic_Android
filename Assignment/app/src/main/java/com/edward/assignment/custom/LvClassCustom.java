@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.edward.assignment.R;
 import com.edward.assignment.model.Classes;
@@ -46,9 +47,9 @@ public class LvClassCustom extends BaseAdapter {
             LayoutInflater layoutInflater = ((Activity)context).getLayoutInflater();
             view = layoutInflater.inflate(R.layout.lv_component,viewGroup,false);
         }
-        EditText id = view.findViewById(R.id.edtId);
-        EditText name =view.findViewById(R.id.edtName);
-        EditText num = view.findViewById(R.id.edtNum);
+        TextView id = view.findViewById(R.id.edtId);
+        TextView name =view.findViewById(R.id.edtName);
+        TextView num = view.findViewById(R.id.edtNum);
 
         num.setText(String.valueOf(i+1));
         name.setText(list.get(i).getClassName());
