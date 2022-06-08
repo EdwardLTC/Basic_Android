@@ -1,4 +1,4 @@
-package com.edward.lab6;
+package com.edward.lab7;
 
 import org.junit.Test;
 

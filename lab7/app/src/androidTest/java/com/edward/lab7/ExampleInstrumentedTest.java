@@ -1,4 +1,4 @@
-package com.edward.lab6;
+package com.edward.lab7;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.edward.lab6", appContext.getPackageName());
+        assertEquals("com.edward.lab7", appContext.getPackageName());
     }
 }
