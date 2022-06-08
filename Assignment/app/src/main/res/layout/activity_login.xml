@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     android:layout_gravity="center"
     android:background="@drawable/img"
     tools:context=".LoginActivity">
@@ -64,22 +65,24 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <Button
-            app:backgroundTint="@null"
             android:id="@+id/loginBtn"
             android:layout_width="160dp"
             android:layout_height="50dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="20dp"
             android:background="@drawable/btnradius"
             android:text="@string/login"
-            android:textColor="#e809e1" />
+            android:textColor="#e809e1"
+            app:backgroundTint="@null" />
 
         <Button
+            android:layout_marginEnd="20dp"
             app:backgroundTint="@null"
             android:id="@+id/rsBtn"
             android:layout_width="160dp"

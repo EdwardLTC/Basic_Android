@@ -20,18 +20,26 @@
 
     <LinearLayout
         android:layout_gravity="center"
-        android:id="@+id/LLO1"
         android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="550dp">
+        <ListView
+            android:id="@+id/classesListView"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/listviewradius" />
 
     </LinearLayout>
 
-    <ListView
-        android:layout_gravity="center"
-        android:id="@+id/classesListView"
-        android:layout_width="350dp"
-        android:background="@drawable/listviewradius"
-        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_marginTop="25dp"
+        app:backgroundTint="@null"
+        android:id="@+id/wayBack"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="200dp"
+        android:background="@drawable/btnradius"
+        android:text="Way back :>"
+        android:textColor="#e809e1"/>
 
 </LinearLayout>

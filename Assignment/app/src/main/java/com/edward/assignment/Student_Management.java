@@ -3,6 +3,7 @@ package com.edward.assignment;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -28,6 +29,7 @@ public class Student_Management extends AppCompatActivity {
     Button add;
     Button rm;
     Button update;
+    Button back;
 
     EditText FN;
     EditText ID;
@@ -45,6 +47,7 @@ public class Student_Management extends AppCompatActivity {
         add = findViewById(R.id.addBtn);
         update =findViewById(R.id.updateBtn);
         rm = findViewById(R.id.remveBtn);
+        back=findViewById(R.id.wayBack);
 
         setSpinner();
         fillData();
@@ -141,6 +144,8 @@ public class Student_Management extends AppCompatActivity {
             builder.create();
             builder.show();
         });
+
+        back.setOnClickListener(view -> startActivity(new Intent(Student_Management.this,MainActivity.class)));
 
     }
 

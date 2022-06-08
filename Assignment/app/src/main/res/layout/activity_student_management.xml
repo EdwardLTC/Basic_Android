@@ -102,6 +102,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -125,6 +126,7 @@
             />
     </LinearLayout>
     <LinearLayout
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -138,12 +140,13 @@
             android:background="@drawable/btnradius"
             />
         <Button
+
             app:backgroundTint="@null"
             android:layout_marginStart="20dp"
-            android:id="@+id/someThings"
+            android:id="@+id/wayBack"
             android:layout_width="180dp"
             android:layout_height="60dp"
-            android:text="someThings :>"
+            android:text="way back :>"
             android:background="@drawable/btnradius"
             />
     </LinearLayout>

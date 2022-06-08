@@ -19,8 +19,7 @@ public class MyStudentSQLite extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String sql = "CREATE TABLE StudentDB (id TEXT primary key, " +
-                "name TEXT,class TEXT)";
+        String sql = "CREATE TABLE StudentDB (id TEXT primary key, " + "name TEXT,class TEXT)";
         sqLiteDatabase.execSQL(sql);
     }
 

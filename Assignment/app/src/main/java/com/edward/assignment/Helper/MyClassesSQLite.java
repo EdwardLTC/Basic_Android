@@ -20,9 +20,9 @@ public class MyClassesSQLite extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String sql = "CREATE TABLE ClassDB (id TEXT primary key, " +
-                "className TEXT)";
+        String sql = "CREATE TABLE ClassDB (id TEXT primary key, " + "className TEXT)";
         sqLiteDatabase.execSQL(sql);
+
     }
 
     @Override
