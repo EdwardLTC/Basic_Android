@@ -7,7 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
     android:layout_gravity="center"
     android:background="@drawable/img"
     tools:context=".LoginActivity">
@@ -54,15 +53,14 @@
             android:background="@drawable/edittextradius"
             />
         <CheckBox
+            android:id="@+id/ckbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="230dp"
             android:textColor="#e809e1"
-            android:checked="true"
             android:text="@string/remember_me" />
 
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_gravity="center"
@@ -84,13 +82,21 @@
         <Button
             android:layout_marginEnd="20dp"
             app:backgroundTint="@null"
-            android:id="@+id/rsBtn"
+            android:id="@+id/regisBtn"
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_marginStart="70dp"
             android:background="@drawable/btnradius"
-            android:text="@string/reset"
+            android:text="register"
             android:textColor="#e809e1" />
     </LinearLayout>
-
+    <Button
+        android:layout_gravity="center"
+        app:backgroundTint="@null"
+        android:id="@+id/Exit"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btnradius"
+        android:text="Exit"
+        android:textColor="#e809e1" />
 </LinearLayout>

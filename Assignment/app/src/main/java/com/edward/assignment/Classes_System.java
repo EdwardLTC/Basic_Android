@@ -1,24 +1,21 @@
 package com.edward.assignment;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import com.edward.assignment.custom.DialogCustomClass;
 import com.edward.assignment.custom.LvClassCustom;
-import com.edward.assignment.custom.LvStudentCustom;
 import com.edward.assignment.model.Classes;
 import com.edward.assignment.model.ClassesDAO;
 
 
 public class Classes_System extends AppCompatActivity {
     ListView lv ;
-    ClassesDAO CD =  new ClassesDAO(this);
+    ClassesDAO CD;
     Button back;
     @SuppressLint("SetTextI18n")
     @Override
@@ -28,31 +25,11 @@ public class Classes_System extends AppCompatActivity {
 
         lv = findViewById(R.id.classesListView);
         back = findViewById(R.id.wayBack);
-
-       fillData();
-
-        lv.setOnItemLongClickListener((adapterView, view, i, l) -> {
+        CD =  new ClassesDAO(this);
+        lv.setOnItemClickListener((adapterView, view, i, l) -> {
             Classes classes = (Classes) adapterView.getAdapter().getItem(i);
-            AlertDialog.Builder builder = new AlertDialog.Builder(Classes_System.this);
-            builder.setTitle("Alert");
-            builder.setMessage("Are you sure to delete "+classes.getClassName()+" :>");
-            builder.setPositiveButton("Okla", (dialogInterface, i1) -> {
-                if (CD.deleteClass(classes.getClassID())){
-                    Toast.makeText(Classes_System.this,"Remove success",Toast.LENGTH_SHORT).show();
-                    fillData();
-                }else {
-                    Toast.makeText(Classes_System.this,"Remove false",Toast.LENGTH_SHORT).show();
-                }
-
-            });
-
-            builder.setNegativeButton("No", (dialogInterface, i12) -> {
-
-            });
-
-            builder.create();
-            builder.show();
-            return false;
+            DialogCustomClass DCC = new DialogCustomClass(this,classes);
+            DCC.show();
         });
 
         back.setOnClickListener(view -> startActivity(new Intent(Classes_System.this,MainActivity.class)));
@@ -62,5 +39,14 @@ public class Classes_System extends AppCompatActivity {
     public void fillData(){
         LvClassCustom adapter = new LvClassCustom(CD.getList(),Classes_System.this);
         lv.setAdapter(adapter);
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if(hasFocus){
+            CD =  new ClassesDAO(this);
+            fillData();
+        }
     }
 }

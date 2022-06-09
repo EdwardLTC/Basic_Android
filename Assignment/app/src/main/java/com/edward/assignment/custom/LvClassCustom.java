@@ -7,18 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.edward.assignment.R;
 import com.edward.assignment.model.Classes;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class LvClassCustom extends BaseAdapter {
-    private ArrayList<Classes> list;
-    private Context context;
+    private final ArrayList<Classes> list;
+    private final Context context;
 
     public LvClassCustom(ArrayList<Classes> list, Context context) {
         this.list = list;

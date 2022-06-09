@@ -31,44 +31,60 @@ public class StudentDAO {
         return list;
     }
 
+    public ArrayList<Students> getListStudentInClass(String className){
+        ArrayList<Students> list = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = myStudentSQLite.getReadableDatabase();
+
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM StudentDB  WHERE class = ?",new String[] {className});
+        if (cursor.getCount()!=0){
+            cursor.moveToFirst();
+            do{
+                list.add(new Students(cursor.getString(1),cursor.getString(0),cursor.getString(2)));
+            }while (cursor.moveToNext());
+        }
+        return list;
+    }
+
     public  boolean insertStudent(Students student){
+        long value = -1;
         try {
             SQLiteDatabase sqLiteDatabase = myStudentSQLite.getWritableDatabase();
             ContentValues contentValues = new ContentValues();
             contentValues.put("id", student.getId());
             contentValues.put("name", student.getFullName());
             contentValues.put("class", student.getClasses());
-            sqLiteDatabase.insert("StudentDB", null, contentValues);
+            value=sqLiteDatabase.insert("StudentDB", null, contentValues);
             return true;
         }catch (Exception e){
             Log.d(e.toString(), "insertProduct: ");
-            return false;
         }
-
+        return value != -1;
     }
 
-    public  boolean updateStudent(Students students){
+    public boolean updateStudent(Students students){
+        long value = -1;
         try{
             SQLiteDatabase sqLiteDatabase =  myStudentSQLite.getWritableDatabase();
             ContentValues contentValues = new ContentValues();
             contentValues.put("name", students.getFullName());
             contentValues.put("class", students.getClasses());
-            sqLiteDatabase.update("StudentDB", contentValues,"id = ?",new String[]{String.valueOf(students.getId())});
-            return true;
+            value =sqLiteDatabase.update("StudentDB", contentValues,"id = ?",new String[]{String.valueOf(students.getId())});
+
         }catch (Exception e){
-            return false;
         }
+        return value != -1;
     }
 
     public boolean deleteStudent(String id){
+        long value = -1;
         try {
             SQLiteDatabase sqLiteDatabase =  myStudentSQLite.getWritableDatabase();
-            sqLiteDatabase.delete("StudentDB","id = ?", new String[]{String.valueOf(id)});
-            return true;
+            value= sqLiteDatabase.delete("StudentDB","id = ?", new String[]{String.valueOf(id)});
         }
         catch (Exception e){
-            return false;
+
         }
+        return value!=-1;
     }
 
 }

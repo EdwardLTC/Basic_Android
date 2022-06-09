@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/dialogshape"
+    android:layout_height="300dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Choose Action"
+        android:textAlignment="center"
+        android:textColor="#e809e1"
+        android:textSize="25sp"
+        />
+
+    <Button
+        android:layout_gravity="center"
+        app:backgroundTint="@null"
+        android:id="@+id/showAllStudent"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btnradius"
+        android:text="Show All Student"
+        android:textColor="#e809e1" />
+
+    <Button
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        app:backgroundTint="@null"
+        android:id="@+id/editClassName"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btnradius"
+        android:text="Edit Class name"
+        android:textColor="#e809e1" />
+    <Button
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        app:backgroundTint="@null"
+        android:id="@+id/rmClass"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btnradius"
+        android:text="Remove Class"
+        android:textColor="#e809e1" />
+</LinearLayout>

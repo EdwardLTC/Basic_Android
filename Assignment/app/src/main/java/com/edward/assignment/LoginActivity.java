@@ -3,54 +3,69 @@ package com.edward.assignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
-    Button login;
-    Button reset;
-    TextView user;
-    TextView password;
+    private TextView user;
+    private TextView password;
+    private CheckBox checkBox;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        login = findViewById(R.id.loginBtn);
-        reset =findViewById(R.id.rsBtn);
+        Button login = findViewById(R.id.loginBtn);
+        Button regis = findViewById(R.id.regisBtn);
+        Button exit = findViewById(R.id.Exit);
+        user = findViewById(R.id.user);
+        password = findViewById(R.id.password);
+        checkBox= findViewById(R.id.ckbox);
 
-        user = (EditText)findViewById(R.id.user);
-        password = (EditText)findViewById(R.id.password);
+        SharedPreferences loginPreferences = getSharedPreferences("isRemember",MODE_PRIVATE);
+        SharedPreferences.Editor editor =loginPreferences.edit();
 
-        login.setOnClickListener(new View.OnClickListener() {
+        boolean saveLogin = loginPreferences.getBoolean("saveLogin", false);
+        if (saveLogin) {
+            SharedPreferences preferences = getSharedPreferences("Account",MODE_PRIVATE);
+            user.setText(preferences.getString("user", ""));
+            password.setText(preferences.getString("pass", ""));
+            checkBox.setChecked(true);
+        }
 
-            @Override
-            public void onClick(View view) {
-                String us = user.getText().toString();
-                String ps = password.getText().toString();
-//               if (us.equals("admin") && ps.equals("admin")){
-                   startActivity(new Intent(LoginActivity.this,MainActivity.class));
-                   Toast.makeText(getApplicationContext(), "Login success",Toast.LENGTH_LONG).show();
-                   finish();
-                }
-//               else {
-//                   Log.i(us, "onClick: ");
-//                   Log.d(ps, "onClick: ");
-//                    Toast.makeText(getApplicationContext(), "Login False",Toast.LENGTH_LONG).show();
-//               }
-//            }
-        });
+        login.setOnClickListener(view -> {
+            String usr = user.getText().toString();
+            String pas = password.getText().toString();
 
-        reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                user.setText("");
-                password.setText("");
+            SharedPreferences preferences = getSharedPreferences("Account",MODE_PRIVATE);
+            String baseUser = preferences.getString("user","");
+            String basePass = preferences.getString("pass","");
+
+            if (checkBox.isChecked()) {
+                editor.putBoolean("saveLogin", true);
+            } else {
+                editor.clear();
             }
+            editor.apply();
+
+            if (usr.equals(baseUser) && pas.equals(basePass)){
+                Toast.makeText(LoginActivity.this, "Login success", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            }
+            else {
+                Toast.makeText(LoginActivity.this, "Login false", Toast.LENGTH_SHORT).show();
+            }
+
         });
+
+        regis.setOnClickListener(view -> startActivity(new Intent(LoginActivity.this,RegisterActivity.class)));
+
+        exit.setOnClickListener(view -> System.exit(0));
+
     }
 }

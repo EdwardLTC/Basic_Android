@@ -9,14 +9,13 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.edward.assignment.R;
-import com.edward.assignment.model.Classes;
 import com.edward.assignment.model.Students;
 
 import java.util.ArrayList;
 
 public class LvStudentCustom extends BaseAdapter {
-    private ArrayList<Students> list;
-    private Context context;
+    private final ArrayList<Students> list;
+    private final Context context;
 
     public LvStudentCustom(ArrayList<Students> list, Context context) {
         this.list = list;
