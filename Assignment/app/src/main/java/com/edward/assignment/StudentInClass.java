@@ -35,7 +35,9 @@ public class StudentInClass extends AppCompatActivity {
         LvStudentCustom adapter = new LvStudentCustom(SD.getListStudentInClass(className),StudentInClass.this);
         lv.setAdapter(adapter);
 
-        back.setOnClickListener(view -> startActivity(new Intent(StudentInClass.this, Classes.class)));
+        back.setOnClickListener(view -> startActivity(new Intent(StudentInClass.this, Classes_System.class)));
 
     }
+
+
 }
