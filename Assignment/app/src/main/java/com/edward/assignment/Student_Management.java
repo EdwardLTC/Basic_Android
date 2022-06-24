@@ -72,11 +72,15 @@ public class Student_Management extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"add False",Toast.LENGTH_LONG).show();
                     return;
                 }
-                SD.insertStudent( new Students(FullName,id,classes));
-                Toast.makeText(getApplicationContext(),"add Success",Toast.LENGTH_LONG).show();
-                fillData();
-                FN.setText("");
-                ID.setText("");
+                if (SD.insertStudent( new Students(FullName,id,classes))){
+                    Toast.makeText(getApplicationContext(),"add Success",Toast.LENGTH_LONG).show();
+                    fillData();
+                    FN.setText("");
+                    ID.setText("");
+                }
+                else {
+                    Toast.makeText(getApplicationContext(),"add False",Toast.LENGTH_LONG).show();
+                }
             }
             catch (Exception e){
                 Toast.makeText(getApplicationContext(),"Error: " + e,Toast.LENGTH_LONG).show();

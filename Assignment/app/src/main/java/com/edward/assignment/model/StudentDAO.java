@@ -1,5 +1,6 @@
 package com.edward.assignment.model;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -21,7 +22,7 @@ public class StudentDAO {
         ArrayList<Students> list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = myStudentSQLite.getReadableDatabase();
 
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM StudentDB",null);
+        @SuppressLint("Recycle") Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM StudentDB",null);
         if (cursor.getCount()!=0){
             cursor.moveToFirst();
             do{
@@ -35,7 +36,7 @@ public class StudentDAO {
         ArrayList<Students> list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = myStudentSQLite.getReadableDatabase();
 
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM StudentDB  WHERE class = ?",new String[] {className});
+        @SuppressLint("Recycle") Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM StudentDB  WHERE class = ?",new String[] {className});
         if (cursor.getCount()!=0){
             cursor.moveToFirst();
             do{
@@ -54,7 +55,6 @@ public class StudentDAO {
             contentValues.put("name", student.getFullName());
             contentValues.put("class", student.getClasses());
             value=sqLiteDatabase.insert("StudentDB", null, contentValues);
-            return true;
         }catch (Exception e){
             Log.d(e.toString(), "insertProduct: ");
         }
@@ -70,7 +70,7 @@ public class StudentDAO {
             contentValues.put("class", students.getClasses());
             value =sqLiteDatabase.update("StudentDB", contentValues,"id = ?",new String[]{String.valueOf(students.getId())});
 
-        }catch (Exception e){
+        }catch (Exception ignored){
         }
         return value != -1;
     }
@@ -81,7 +81,7 @@ public class StudentDAO {
             SQLiteDatabase sqLiteDatabase =  myStudentSQLite.getWritableDatabase();
             value= sqLiteDatabase.delete("StudentDB","id = ?", new String[]{String.valueOf(id)});
         }
-        catch (Exception e){
+        catch (Exception ignored){
 
         }
         return value!=-1;

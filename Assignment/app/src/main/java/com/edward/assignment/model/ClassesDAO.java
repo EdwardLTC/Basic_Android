@@ -24,7 +24,7 @@ public class ClassesDAO extends MyClassesSQLite{
         ArrayList<Classes> list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = myClassesSQLite.getReadableDatabase();
 
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM ClassDB",null);
+        @SuppressLint("Recycle") Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM ClassDB",null);
         if (cursor.getCount()!=0){
             cursor.moveToFirst();
             do{
@@ -44,7 +44,6 @@ public class ClassesDAO extends MyClassesSQLite{
             value = sqLiteDatabase.insert("ClassDB", null, contentValues);
         }catch (Exception e){
             Log.d(e.toString(), "insertProduct: ");
-
         }
         System.out.println(value);
         return value != -1;
@@ -58,7 +57,7 @@ public class ClassesDAO extends MyClassesSQLite{
             ContentValues contentValues = new ContentValues();
             contentValues.put("className",ReName);
             value = sqLiteDatabase.update("ClassDB", contentValues,"id = ?",new String[]{id});
-        }catch (Exception e){
+        }catch (Exception ignored){
         }
         return value != -1;
     }
@@ -69,7 +68,7 @@ public class ClassesDAO extends MyClassesSQLite{
             SQLiteDatabase sqLiteDatabase =  myClassesSQLite.getWritableDatabase();
             value= sqLiteDatabase.delete("ClassDB","id = ?", new String[]{String.valueOf(id)});
         }
-        catch (Exception e){
+        catch (Exception ignored){
         }
         return value != -1;
     }
